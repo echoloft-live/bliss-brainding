@@ -16,17 +16,24 @@ export function Contact() {
         <SectionHeader
           eyebrow="Contact"
           title="Get in touch with Bliss"
-          description="Serving clients in Augusta, Georgia. Message us for exact location details."
+          description={`Find us at ${SITE.address}. Walk-ins welcome, appointments preferred.`}
         />
 
         <div className="grid grid-cols-2 gap-[26px] max-md:grid-cols-1">
           <ContactCard
             icon={<LocationIcon className="w-[19px] h-[19px]" />}
             title="Location"
-            description={SITE.fullLocation}
+            description="Visit our studio"
           >
             <div className="text-[14.5px] text-purple-deep font-bold mt-1">
-              Contact us for exact location
+              <a
+                href={SITE.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors duration-200 hover:text-violet"
+              >
+                {SITE.address}
+              </a>
             </div>
           </ContactCard>
 
@@ -68,10 +75,18 @@ export function Contact() {
                 {SITE.whatsapp.number}
               </a>
             </div>
-            <div className="mt-[6px] h-[130px] rounded-[14px] bg-[linear-gradient(135deg,rgba(110,63,163,0.07),rgba(44,140,135,0.07))] border border-[var(--color-line)] flex flex-col items-center justify-center gap-[6px] text-[12.5px] text-charcoal-soft text-center p-[14px]">
+            <a
+              href={SITE.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-[6px] h-[130px] rounded-[14px] bg-[linear-gradient(135deg,rgba(110,63,163,0.07),rgba(44,140,135,0.07))] border border-[var(--color-line)] flex flex-col items-center justify-center gap-[6px] text-[12.5px] text-charcoal-soft text-center p-[14px] transition-colors duration-200 hover:border-violet-soft hover:text-purple-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+            >
               <LocationIcon className="w-[15px] h-[15px]" aria-hidden="true" />
-              Map preview · {SITE.fullLocation}
-            </div>
+              <span>{SITE.address}</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.06em] text-teal">
+                Get Directions
+              </span>
+            </a>
           </ContactCard>
 
           <ContactCard

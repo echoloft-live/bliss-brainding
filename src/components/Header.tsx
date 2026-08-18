@@ -315,9 +315,16 @@ export function Header() {
                 {SITE.phones.primary}
               </a>
             </li>
-            <li className="flex min-h-[44px] items-center gap-3 text-[14px] text-white/80">
-              <LocationIcon className="w-[17px] h-[17px] text-teal-soft shrink-0" />
-              {SITE.fullLocation}
+            <li>
+              <a
+                href={SITE.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-[44px] items-center gap-3 text-[14px] text-white/80 transition-colors duration-200 hover:text-white"
+              >
+                <LocationIcon className="w-[17px] h-[17px] text-teal-soft shrink-0" />
+                {SITE.address}
+              </a>
             </li>
           </ul>
 

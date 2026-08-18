@@ -31,8 +31,8 @@ export function Footer() {
               </span>
             </a>
             <p className="text-[13px] my-4 mb-[18px] max-w-[270px]">
-              Professional African hair braiding in {SITE.fullLocation}. Beautiful results,
-              careful styling, and a welcoming experience.
+              Professional African hair braiding at {SITE.address}. Beautiful results, careful
+              styling, and a welcoming experience.
             </p>
             <div className="flex items-center gap-2">
               <FooterSocial href={SITE.social.tiktok} label="TikTok">
@@ -55,7 +55,16 @@ export function Footer() {
               Contact
             </h5>
             <ul>
-              <li className="mb-[10px] text-[13.5px]">{SITE.fullLocation}</li>
+              <li className="mb-[10px] text-[13.5px]">
+                <a
+                  href={SITE.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-200 hover:text-violet"
+                >
+                  {SITE.address}
+                </a>
+              </li>
               <li className="mb-[10px] text-[13.5px]">
                 <a
                   href={`tel:${SITE.phones.primaryTel}`}
@@ -78,7 +87,7 @@ export function Footer() {
 
         <div className="flex justify-between items-center pt-[22px] text-[12px] flex-wrap gap-[10px]">
           <span>© {year} {SITE.name}. All Rights Reserved.</span>
-          <span>{SITE.fullLocation}</span>
+          <span>{SITE.address}</span>
         </div>
       </div>
     </footer>

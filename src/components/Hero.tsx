@@ -34,7 +34,7 @@ export function Hero() {
         <div className="max-w-[680px] mx-auto px-7 max-md:px-6">
           <div className="reveal in">
             <Eyebrow className="text-teal-soft">
-              {SITE.name} · {SITE.fullLocation}
+              {SITE.name} · {SITE.address}
             </Eyebrow>
           </div>
           <h1 className="reveal in text-white text-[clamp(38px,6vw,64px)] leading-[1.08] my-5 [transition-delay:0.1s]">
@@ -45,7 +45,7 @@ export function Hero() {
             </span>
           </h1>
           <p className="reveal in text-white/85 text-[17px] max-w-[460px] mb-[34px] [transition-delay:0.2s]">
-            Professional African hair braiding in {SITE.fullLocation}. Discover beautiful styles
+            Professional African hair braiding at {SITE.address}. Discover beautiful styles
             created with care, precision, and attention to detail.
           </p>
           <div className="reveal in flex gap-[14px] flex-wrap mb-11 [transition-delay:0.3s] max-md:grid max-md:gap-3">
@@ -57,7 +57,7 @@ export function Hero() {
             </Button>
           </div>
           <div className="reveal in flex gap-[26px] gap-y-3 flex-wrap [transition-delay:0.4s]">
-            <Badge>{SITE.fullLocation}</Badge>
+            <Badge>{SITE.address}</Badge>
             <Badge>WhatsApp Booking</Badge>
             <Badge>All Ages Welcome</Badge>
           </div>

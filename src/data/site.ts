@@ -1,9 +1,13 @@
 export const SITE = {
   name: 'Bliss African Hair Braiding',
   brandShort: 'Bliss Braiding',
+  street: 'Norwich Road',
   city: 'Augusta',
   region: 'GA',
-  fullLocation: 'Augusta, Georgia',
+  postalCode: '30909',
+  address: 'Norwich Road, Augusta, GA 30909',
+  fullLocation: 'Augusta, GA 30909',
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Norwich+Road,+Augusta,+GA+30909',
   phones: {
     primary: '+1 404-934-3112',
     primaryTel: '+14049343112',
