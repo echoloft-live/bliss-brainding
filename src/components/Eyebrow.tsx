@@ -5,15 +5,14 @@ interface EyebrowProps extends HTMLAttributes<HTMLSpanElement> {
   center?: boolean;
 }
 
+/** Small uppercase section label. Kept as plain tracked text, no rules or dashes. */
 export function Eyebrow({ children, center = false, className = '', ...rest }: EyebrowProps) {
   return (
     <span
       className={[
-        'inline-flex items-center gap-[9px]',
+        'inline-block',
         'text-[11.5px] font-bold tracking-[0.2em] uppercase text-teal',
-        center
-          ? 'justify-center'
-          : "before:content-[''] before:w-6 before:h-[1.5px] before:bg-teal before:rounded-sm",
+        center ? 'text-center' : '',
         className,
       ].join(' ')}
       {...rest}

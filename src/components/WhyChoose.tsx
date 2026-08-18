@@ -39,7 +39,7 @@ const items: WhyItem[] = [
 export function WhyChoose() {
   return (
     <section className="py-[100px] bg-paper-dim max-md:py-20">
-      <div className="max-w-[1200px] mx-auto px-7 max-md:px-5">
+      <div className="max-w-[1200px] mx-auto px-7 max-md:px-6">
         <SectionHeader eyebrow="Why Choose Bliss" title="Braiding you can trust" center />
 
         <div className="grid grid-cols-4 gap-6 max-[1080px]:grid-cols-2 max-md:grid-cols-1">

@@ -30,8 +30,12 @@ export function SectionHeader({
       <Eyebrow center={center}>{eyebrow}</Eyebrow>
       <h2 className="text-[clamp(28px,4vw,42px)] leading-[1.15] mt-[14px]">{title}</h2>
       {description ? (
-        <p className={['text-charcoal-soft mt-[14px] text-[15.5px]', center ? 'mx-auto' : '']
-          .join(' ')}>
+        <p
+          className={[
+            'text-charcoal-soft mt-[14px] text-[15.5px]',
+            center ? 'mx-auto max-w-[520px]' : '',
+          ].join(' ')}
+        >
           {description}
         </p>
       ) : null}

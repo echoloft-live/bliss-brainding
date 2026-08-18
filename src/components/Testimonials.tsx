@@ -6,11 +6,11 @@ import { Button } from './Button';
 export function Testimonials() {
   return (
     <section id="testimonials" className="py-[110px] max-md:py-20">
-      <div className="max-w-[1200px] mx-auto px-7 max-md:px-5">
+      <div className="max-w-[1200px] mx-auto px-7 max-md:px-6">
         <SectionHeader
           eyebrow="Testimonials"
           title="What our clients say"
-          description="Placeholder reviews shown below — structured so real Google reviews can be added as they come in."
+          description="Placeholder reviews are shown below. Real Google reviews will be added as they come in."
           center
         />
 
@@ -20,7 +20,11 @@ export function Testimonials() {
               key={t.id}
               className="bg-white border border-[var(--color-line)] rounded-[20px] p-[30px] shadow-[var(--shadow-tight)]"
             >
-              <div className="text-teal text-[14px] tracking-[3px] mb-4">
+              <div
+                className="text-teal text-[14px] tracking-[3px] mb-4"
+                role="img"
+                aria-label={`${t.stars} out of 5 stars`}
+              >
                 {'★'.repeat(t.stars)}
               </div>
               <p className="quote text-[14.5px] text-charcoal mb-[22px] leading-[1.7]">
@@ -46,6 +50,7 @@ export function Testimonials() {
             target="_blank"
             rel="noopener noreferrer"
             variant="outline-dark"
+            className="max-md:w-full"
           >
             See Us on Google
           </Button>
