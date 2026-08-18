@@ -15,22 +15,24 @@ export function Gallery() {
 
   return (
     <section id="gallery" className="py-[110px] bg-lavender max-md:py-20">
-      <div className="max-w-[1200px] mx-auto px-7 max-md:px-5">
+      <div className="max-w-[1200px] mx-auto px-7 max-md:px-6">
         <SectionHeader
           eyebrow="Braiding Gallery"
           title="A closer look at our work"
-          description="Real client photography is coming soon — this gallery is structured so we can drop in finished looks by category as they're taken."
+          description="Real client photography is coming soon. This gallery is structured so we can drop in finished looks by category as they're taken."
         />
 
         {/* Filters */}
-        <div className="flex gap-[10px] flex-wrap mb-10">
+        <div className="flex gap-[10px] flex-wrap mb-10" role="group" aria-label="Filter gallery by style">
           {galleryCategories.map((cat) => (
             <button
               key={cat}
               type="button"
               onClick={() => setActive(cat)}
+              aria-pressed={active === cat}
               className={[
-                'px-[18px] py-[9px] rounded-full border text-[12.5px] font-bold transition-colors duration-200 cursor-pointer',
+                'min-h-[40px] px-[18px] rounded-full border text-[12.5px] font-bold transition-colors duration-200 cursor-pointer',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2 focus-visible:ring-offset-transparent',
                 active === cat
                   ? 'bg-teal text-white border-transparent'
                   : 'bg-white border-[var(--color-line)] text-purple-deep hover:bg-paper',

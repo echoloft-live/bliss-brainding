@@ -6,12 +6,12 @@ import { PlaceholderTile } from './PlaceholderTile';
 
 export function Services() {
   return (
-    <section id="services" className="py-[120px] pb-[100px] max-md:py-20">
-      <div className="max-w-[1200px] mx-auto px-7 max-md:px-5">
+    <section id="services" className="py-[120px] pb-[100px] max-md:py-20 max-md:pb-20">
+      <div className="max-w-[1200px] mx-auto px-7 max-md:px-6">
         <SectionHeader
           eyebrow="Our Styles"
           title="A style for every occasion"
-          description="From protective everyday styles to statement looks for a special event. Pricing varies by length, size and hair used — contact us for pricing."
+          description="From protective everyday styles to statement looks for a special event. Pricing varies by length, size, and hair used, so contact us for a quote."
           center
         />
 

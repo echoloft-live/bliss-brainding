@@ -64,6 +64,18 @@ export const CheckIcon = (props: IconProps) => (
   </svg>
 );
 
+export const CloseIcon = (props: IconProps) => (
+  <svg {...base} strokeWidth={2} {...props}>
+    <path d="M18 6 6 18M6 6l12 12" />
+  </svg>
+);
+
+export const ChevronIcon = (props: IconProps) => (
+  <svg {...base} strokeWidth={2} {...props}>
+    <path d="m9 6 6 6-6 6" />
+  </svg>
+);
+
 export const HeartIcon = (props: IconProps) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
     <path d="M12 21s-7-4.6-9.5-8.5C.7 9 2 5.5 5.2 4.6 7.3 4 9.4 5 12 8c2.6-3 4.7-4 6.8-3.4C22 5.5 23.3 9 21.5 12.5 19 16.4 12 21 12 21Z" />
