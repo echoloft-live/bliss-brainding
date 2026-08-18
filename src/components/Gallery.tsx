@@ -1,0 +1,72 @@
+import { useState } from 'react';
+import { galleryCategories, galleryItems } from '@/data/gallery';
+import type { GalleryCategory } from '@/data/gallery';
+import { SectionHeader } from './SectionHeader';
+import { PlaceholderTile } from './PlaceholderTile';
+import { serviceIconMap } from '@/icons';
+
+export function Gallery() {
+  const [active, setActive] = useState<GalleryCategory>('All');
+
+  const items =
+    active === 'All'
+      ? galleryItems
+      : galleryItems.filter((i) => i.category === active);
+
+  return (
+    <section id="gallery" className="py-[110px] bg-lavender max-md:py-20">
+      <div className="max-w-[1200px] mx-auto px-7 max-md:px-5">
+        <SectionHeader
+          eyebrow="Braiding Gallery"
+          title="A closer look at our work"
+          description="Real client photography is coming soon — this gallery is structured so we can drop in finished looks by category as they're taken."
+        />
+
+        {/* Filters */}
+        <div className="flex gap-[10px] flex-wrap mb-10">
+          {galleryCategories.map((cat) => (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setActive(cat)}
+              className={[
+                'px-[18px] py-[9px] rounded-full border text-[12.5px] font-bold transition-colors duration-200 cursor-pointer',
+                active === cat
+                  ? 'bg-teal text-white border-transparent'
+                  : 'bg-white border-[var(--color-line)] text-purple-deep hover:bg-paper',
+              ].join(' ')}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Masonry */}
+        <div className="columns-4 gap-5 [column-width:220px] max-[1080px]:columns-3 max-[1080px]:[column-width:180px] max-md:columns-2 max-md:[column-width:140px]">
+          {items.map((item) => {
+            const Icon = serviceIconMap[item.icon];
+            const aspectMap = {
+              '3/4': 'aspect-[3/4]',
+              '1/1': 'aspect-square',
+              '4/5': 'aspect-[4/5]',
+            } as const;
+            return (
+              <div
+                key={item.id}
+                className={[
+                  'break-inside-avoid mb-5 rounded-[18px] overflow-hidden shadow-[var(--shadow-tight)] relative',
+                  aspectMap[item.aspect],
+                ].join(' ')}
+              >
+                <PlaceholderTile icon={<Icon className="w-[26px] h-[26px]" />} label={item.label} />
+                <span className="absolute bottom-[14px] left-[14px] bg-white/92 text-purple-deep text-[10.5px] font-bold tracking-[0.04em] uppercase px-3 py-[6px] rounded-full z-[2]">
+                  {item.category === 'Special Occasion' ? 'Occasion' : item.category}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

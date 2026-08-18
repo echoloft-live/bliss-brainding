@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  /* === Design Tokens === */
+  --color-purple-deep: #3D2159;
+  --color-violet: #6E3FA3;
+  --color-violet-soft: #9B6FC7;
+  --color-teal: #2C8C87;
+  --color-teal-soft: #5FBFB6;
+  --color-lavender: #F3EDFA;
+  --color-paper: #FBF8F5;
+  --color-paper-dim: #F4EFEA;
+  --color-charcoal: #2A2530;
+  --color-charcoal-soft: #6B6373;
+  --color-whatsapp: #25D366;
+  --color-line: rgba(61, 33, 89, 0.12);
+
+  /* Font families */
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Playfair Display', ui-serif, Georgia, serif;
+
+  /* Shadows */
+  --shadow-soft: 0 24px 60px -28px rgba(61, 33, 89, 0.35);
+  --shadow-tight: 0 10px 26px -14px rgba(61, 33, 89, 0.28);
+
+  /* Easing */
+  --ease-out-expo: cubic-bezier(0.16, 0.8, 0.24, 1);
+
+  /* Animations */
+  --animate-hero-zoom: heroZoom 24s ease-in-out infinite alternate;
+  --animate-floaty: floaty 7s ease-in-out infinite;
+  --animate-pulse-wa: pulseWA 2.6s ease-in-out infinite;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(5deg); }
+}
+
+@keyframes pulseWA {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+/* === Base Styles === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-purple-deep);
+  letter-spacing: 0.01em;
+}
+
+/* === Reveal on scroll === */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* === Mobile tabbar safe area === */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .mobile-tabbar {
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  }
+}

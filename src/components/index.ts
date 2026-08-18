@@ -1,0 +1,17 @@
+export { Header } from './Header';
+export { Hero } from './Hero';
+export { Services } from './Services';
+export { Gallery } from './Gallery';
+export { About } from './About';
+export { WhyChoose } from './WhyChoose';
+export { Booking } from './Booking';
+export { Follow } from './Follow';
+export { Testimonials } from './Testimonials';
+export { Contact } from './Contact';
+export { Footer } from './Footer';
+export { FloatingWhatsApp } from './FloatingWhatsApp';
+export { MobileTabBar } from './MobileTabBar';
+export { Button } from './Button';
+export { Eyebrow } from './Eyebrow';
+export { SectionHeader } from './SectionHeader';
+export { PlaceholderTile } from './PlaceholderTile';
