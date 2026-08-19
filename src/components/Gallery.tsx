@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { galleryCategories, galleryItems } from '@/data/gallery';
 import type { GalleryCategory } from '@/data/gallery';
 import { SectionHeader } from './SectionHeader';
-import { PlaceholderTile } from './PlaceholderTile';
-import { serviceIconMap } from '@/icons';
 
 export function Gallery() {
   const [active, setActive] = useState<GalleryCategory>('All');
@@ -19,7 +17,7 @@ export function Gallery() {
         <SectionHeader
           eyebrow="Braiding Gallery"
           title="A closer look at our work"
-          description="Real client photography is coming soon. This gallery is structured so we can drop in finished looks by category as they're taken."
+          description="A selection of finished looks by category — from everyday protective styles to statement pieces for special occasions."
         />
 
         {/* Filters */}
@@ -46,7 +44,6 @@ export function Gallery() {
         {/* Masonry */}
         <div className="columns-4 gap-5 [column-width:220px] max-[1080px]:columns-3 max-[1080px]:[column-width:180px] max-md:columns-2 max-md:[column-width:140px]">
           {items.map((item) => {
-            const Icon = serviceIconMap[item.icon];
             const aspectMap = {
               '3/4': 'aspect-[3/4]',
               '1/1': 'aspect-square',
@@ -60,7 +57,12 @@ export function Gallery() {
                   aspectMap[item.aspect],
                 ].join(' ')}
               >
-                <PlaceholderTile icon={<Icon className="w-[26px] h-[26px]" />} label={item.label} />
+                <img
+                  src={item.image}
+                  alt={`${item.label} braids`}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 <span className="absolute bottom-[14px] left-[14px] bg-white/92 text-purple-deep text-[10.5px] font-bold tracking-[0.04em] uppercase px-3 py-[6px] rounded-full z-[2]">
                   {item.category === 'Special Occasion' ? 'Occasion' : item.category}
                 </span>

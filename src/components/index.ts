@@ -13,4 +13,3 @@ export { FloatingWhatsApp } from './FloatingWhatsApp';
 export { Button } from './Button';
 export { Eyebrow } from './Eyebrow';
 export { SectionHeader } from './SectionHeader';
-export { PlaceholderTile } from './PlaceholderTile';

@@ -1,8 +1,6 @@
 import { services } from '@/data/services';
-import { serviceIconMap } from '@/icons';
 import { Button } from './Button';
 import { SectionHeader } from './SectionHeader';
-import { PlaceholderTile } from './PlaceholderTile';
 
 export function Services() {
   return (
@@ -17,17 +15,17 @@ export function Services() {
 
         <div className="grid grid-cols-3 gap-[26px] max-[1080px]:grid-cols-2 max-md:grid-cols-1">
           {services.map((service) => {
-            const Icon = serviceIconMap[service.icon];
             return (
               <article
                 key={service.id}
                 className="bg-white rounded-[20px] overflow-hidden border border-[var(--color-line)] shadow-[var(--shadow-tight)] transition-[transform,box-shadow] duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-[7px] hover:shadow-[var(--shadow-soft)]"
               >
                 <div className="h-[190px] rounded-t-[20px] overflow-hidden">
-                  <PlaceholderTile
-                    icon={<Icon className="w-[26px] h-[26px]" />}
-                    label={service.name}
-                    sub="Photo coming soon"
+                  <img
+                    src={service.image}
+                    alt={service.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="p-6 pb-[26px]">
