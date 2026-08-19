@@ -1,17 +1,16 @@
 import { Button } from './Button';
 import { Eyebrow } from './Eyebrow';
-import { PlaceholderTile } from './PlaceholderTile';
-import { BraidIcon } from '@/icons';
 
 export function About() {
   return (
     <section id="about" className="py-[110px] max-md:py-20">
       <div className="max-w-[1200px] mx-auto px-7 max-md:px-6 grid grid-cols-[0.9fr_1.1fr] gap-16 items-center max-[1080px]:grid-cols-1 max-[1080px]:gap-10">
         <div className="reveal rounded-[22px] overflow-hidden shadow-[var(--shadow-soft)] aspect-[4/5] max-[1080px]:max-w-[420px] max-[1080px]:mx-auto">
-          <PlaceholderTile
-            icon={<BraidIcon className="w-11! h-11!" />}
-            label="Bliss African Hair Braiding"
-            sub="Studio photography coming soon"
+          <img
+            src="/images/about-studio.jpg"
+            alt="A stylist braiding a client's hair at Bliss African Hair Braiding"
+            loading="lazy"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="reveal [transition-delay:0.1s]">

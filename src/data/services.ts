@@ -4,6 +4,7 @@ export interface Service {
   description: string;
   icon: 'braid' | 'cornrows' | 'circle' | 'person' | 'twist' | 'sparkle';
   priceNote: string;
+  image: string;
 }
 
 export const services: Service[] = [
@@ -13,6 +14,7 @@ export const services: Service[] = [
     description: 'Classic, versatile protective braids in the size and length you love.',
     icon: 'braid',
     priceNote: 'Contact us for pricing',
+    image: '/images/service-box-braids.jpg',
   },
   {
     id: 'knotless-braids',
@@ -20,6 +22,7 @@ export const services: Service[] = [
     description: 'A gentler, natural-looking finish with less tension at the root.',
     icon: 'braid',
     priceNote: 'Contact us for pricing',
+    image: '/images/service-knotless-braids.jpg',
   },
   {
     id: 'cornrows',
@@ -27,6 +30,7 @@ export const services: Service[] = [
     description: 'Neat, close-to-scalp designs — simple styles or intricate patterns.',
     icon: 'cornrows',
     priceNote: 'Contact us for pricing',
+    image: '/images/service-cornrows.jpg',
   },
   {
     id: 'goddess-braids',
@@ -34,6 +38,7 @@ export const services: Service[] = [
     description: 'Thicker, raised braids for a bold, elegant statement look.',
     icon: 'circle',
     priceNote: 'Contact us for pricing',
+    image: '/images/service-goddess-braids.jpg',
   },
   {
     id: 'fulani-braids',
@@ -41,6 +46,7 @@ export const services: Service[] = [
     description: 'Center braid with cornrow sides, finished with beads for detail.',
     icon: 'person',
     priceNote: 'Contact us for pricing',
+    image: '/images/service-fulani-braids.jpg',
   },
   {
     id: 'boho-braids',
@@ -48,6 +54,7 @@ export const services: Service[] = [
     description: 'Soft curly pieces left loose for an effortless, romantic finish.',
     icon: 'twist',
     priceNote: 'Contact us for pricing',
+    image: '/images/service-boho-braids.jpg',
   },
   {
     id: 'kids-braids',
@@ -55,6 +62,7 @@ export const services: Service[] = [
     description: 'Gentle, comfortable styling with our little clients in mind.',
     icon: 'person',
     priceNote: 'Contact us for pricing',
+    image: '/images/service-kids-braids.jpg',
   },
   {
     id: 'twists',
@@ -62,6 +70,7 @@ export const services: Service[] = [
     description: 'Two-strand or Senegalese twists for a smooth, defined texture.',
     icon: 'twist',
     priceNote: 'Contact us for pricing',
+    image: '/images/service-twists.jpg',
   },
   {
     id: 'custom',
@@ -69,6 +78,7 @@ export const services: Service[] = [
     description: 'Have something specific in mind? We\'ll bring your vision to life.',
     icon: 'sparkle',
     priceNote: 'Contact us for pricing',
+    image: '/images/service-custom.jpg',
   },
 ];
 

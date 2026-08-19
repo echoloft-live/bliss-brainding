@@ -16,7 +16,7 @@ src/
 ├── components/      # UI and section components
 │   ├── layout/      # Header, Footer, FloatingWhatsApp, MobileTabBar
 │   ├── sections/    # Hero, Services, Gallery, About, WhyChoose, Booking, Follow, Testimonials, Contact
-│   └── ui/          # Button, Eyebrow, SectionHeader, PlaceholderTile
+│   └── ui/          # Button, Eyebrow, SectionHeader
 ├── data/            # Typed content (services, testimonials, gallery, site config)
 ├── hooks/           # useScrolled, useReveal (IntersectionObserver)
 ├── icons/           # Inline SVG React icon components
@@ -53,7 +53,7 @@ The brand palette is defined in `src/index.css` as Tailwind `@theme` custom colo
 
 - Meta description, OpenGraph tags, and JSON-LD `HairSalon` / `LocalBusiness` schema are in `index.html`.
 - Semantic HTML (`<header>`, `<main>`, `<section>`, `<footer>`, `<article>`).
-- Decorative placeholder tiles (used until real client photography is available) carry the "Photo coming soon" sublabel.
+- Salon photography lives in `public/images/` and is wired into the About, Services, and Gallery sections.
 
 ## Accessibility notes
 
